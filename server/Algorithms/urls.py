@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-
+from . import views
 urlpatterns = [
-    path('DataStructures/',name=),
+  path("Algorithms/",views.Algorithms,name="Algorithms")
 ]

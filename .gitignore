@@ -1,2 +1,4 @@
 env
 .vscode
+server/Algorithms/__pycache__
+server/DataStructures/__pycache__

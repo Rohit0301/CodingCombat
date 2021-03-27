@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Algorithm,AlgorithmsBlog,AlgorithmsQuestion,AlgorithmsVideo
+from .models import Algorithm,AlgorithmBlog,AlgorithmQuestion,AlgorithmVideo
 # Register your models here.
 admin.site.register(Algorithm)
-admin.site.register(AlgorithmsVideo)
-admin.site.register(AlgorithmsBlog)
-admin.site.register(AlgorithmsQuestion)
+admin.site.register(AlgorithmVideo)
+admin.site.register(AlgorithmBlog)
+admin.site.register(AlgorithmQuestion)

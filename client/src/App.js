@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
-import fbLogin from "./services/fbLogin"
+import GithubLogin from 'react-github-login';
+import githubLogin from "./services/githubLogin"
 import googleLogin from "./services/googleLogin"
 import './App.css';
 
 class App extends Component {
 
   render() {
-    const responseFacebook = async (response) => {
-      let fbResponse  = await fbLogin(response.accessToken)
-      console.log(fbResponse);
-      console.log(response);
+    const responseGithub =  async(response) => {
+      let githubResponnse  = await githubLogin(response.code)
+     
     }
 
     const responseGoogle = async(response) => {
       let googleResponse  = await googleLogin(response.accessToken)
-      console.log(googleResponse);
-      console.log(response);
+     
     }
+
+  
 
     return (
       <div className="App">
         <h1>LOGIN WITH FACEBOOK AND GOOGLE</h1>
 
-        <FacebookLogin
-          appId="369463637510904"
-          fields="name,email"
-          callback={responseFacebook}
-          version="3.1"
-          redirectUri="http://localhost:8000/rest-auth/user/"
+        <GithubLogin
+          clientId="e1d7f23a57a3c7d4b6f2"
+          redirectUri="" 
+          onSuccess={responseGithub}
+          onFailure={responseGithub}
         />
         <br />
         <br />
@@ -40,7 +40,7 @@ class App extends Component {
           buttonText="LOGIN WITH GOOGLE"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
-          redirectUri="http://localhost:8000/rest-auth/user/"
+
         />
 
       </div>

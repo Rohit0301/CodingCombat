@@ -16,19 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.views.decorators.csrf import csrf_exempt
-from Authentication.views import FacebookLogin,GoogleLogin
+from Authentication.views import GoogleLogin,GithubLogin,TwitterLogin,LinkedInLogin,FacebookLogin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Algorithms.urls')),
-<<<<<<< HEAD
     # path('accounts/',(include('allauth.urls'))),
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path('rest-auth/facebook/', FacebookLogin.as_view(), name='fb_login'),
     path('rest-auth/google/', GoogleLogin.as_view(), name='google_login'),
+    path('rest-auth/github/', GithubLogin.as_view(), name='github_login'),
+    path('rest-auth/linkedin/', LinkedInLogin.as_view(), name='linkedin_login'),
+    path('rest-auth/twitter/', TwitterLogin.as_view(), name='twitter_login'),
 
-=======
     path('',include('DataStructures.urls')),
->>>>>>> fbf55698f63966dca406683a8736fda2e6df70b8
 ]

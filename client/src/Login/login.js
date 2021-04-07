@@ -34,7 +34,7 @@ const login = () => {
                              <Grid item  sm={6} xs={6} lg={6}>
                             
                                         <GoogleLogin
-                                            clientId={Process.env.GOOGLE_API_KEY}
+                                            clientId={process.env.GOOGLE_API_KEY}
                                             render={renderProps => (
                                             <Button className="googlebutton" onClick={renderProps.onClick} > <i class="fab fa-google fa-5x"></i></Button>)}
                                             onSuccess={responseGoogle}
@@ -47,7 +47,7 @@ const login = () => {
                              
                            
                                     <GithubLogin
-                                            clientId={Process.env.GITHUB_API_KEY}
+                                            clientId={process.env.GITHUB_API_KEY}
                                             buttonText=""
                                             redirectUri="" 
                                             onSuccess={responseGithub}

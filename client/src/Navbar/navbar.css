@@ -1,0 +1,16 @@
+.MuiGrid-root.mainGrid.MuiGrid-grid-xs-10.MuiGrid-grid-sm-10.MuiGrid-grid-lg-11 {
+    width: 100%;
+    height: 3rem;
+    background-color: black;
+    margin-top:1rem;
+}
+
+
+/* @media only screen and (max-width: 600px) {
+    .MuiGrid-root.mainGrid.MuiGrid-grid-xs-10.MuiGrid-grid-sm-10.MuiGrid-grid-lg-11 {
+        width: 100%;
+        height: 35rem;
+        margin-top:2rem;
+    }  
+  
+  } */

@@ -8,7 +8,7 @@
   const githubLogin = async (accesstoken) => {
 	 
 	  let res = await axios.post(
-		"http://localhost:8000/rest-auth/github/",
+		`${process.env.GITHUB_LOGIN_ROUTE}`,
 		{
 		  code: accesstoken,
 		}

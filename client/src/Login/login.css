@@ -2,6 +2,8 @@
     height: 30rem;
     width: 25rem;   
     margin-top:2rem;
+    background-color:#e0d7bd;
+   
 }
 .MuiGrid-root.main.MuiGrid-container {
     justify-content: center;
@@ -14,24 +16,66 @@ p.MuiTypography-root.heading.MuiTypography-body1 {
     font-size: 2rem;
     font-family: serif;
     margin-left: 6rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
-
-button.githubButton {
-    width: 13rem;
-    height: 3rem;
-    background-color: black;
-    color: white;
-    font-size: .9rem;
-    font-family: sans-serif;
-    margin-top: 1.5rem;
-
-}
-
-button.googleButton {
-    font-size: .9rem;
+.react-arc-text {
+    font-size: 1.4rem;
     font-family: sans-serif;
     margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+button.githubButton {
+    border-radius: 50%;
+    width: 8.2rem;
+    height: 8.2rem;
+    border-color: white;
+    border:0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-left: 1rem;
+    background-color: white;  
+    cursor: pointer;
+}
+button.githubButton:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.googlebutton {
+    border-radius: 50%;
+    box-shadow: 0 0 10 5 black;
+    width: 8rem;
+    height: 8rem;
+    margin-left: 3rem;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.googlebutton:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+.MuiPaper-root.googlePaper.MuiPaper-elevation4.MuiPaper-rounded {
+    margin: 1rem;
+    height: 8rem;
+    border-radius:50%;
+}
+.MuiPaper-root.githubPaper.MuiPaper-elevation4.MuiPaper-rounded {
+    margin: 1rem;
+    height: 8rem;
+    border-radius:50%;
+}
+p.MuiTypography-root.githubLogin.MuiTypography-body1 {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-family: emoji;
+    font-weight: 600;
 }
 p.MuiTypography-root.githubLoginText.MuiTypography-body1 {
     font-size: .9rem;
@@ -39,7 +83,16 @@ p.MuiTypography-root.githubLoginText.MuiTypography-body1 {
     margin-top: .1rem;
     font-family: sans-serif;
 }
-
+p.MuiTypography-root.signup.MuiTypography-body1 {
+    font-size: .9rem;
+    font-family: sans-serif;
+    margin-top: 1rem;
+}
+button.MuiTypography-root.MuiLink-root.MuiLink-underlineHover.Link.MuiLink-button.MuiTypography-colorPrimary {
+    font-size: 1rem;
+    font-family: sans-serif;
+    margin-left: .3rem;
+}
 @media only screen and (max-width: 600px) {
     .MuiPaper-root.paper.MuiPaper-elevation3.MuiPaper-rounded {
         height: 30rem;
@@ -49,5 +102,10 @@ p.MuiTypography-root.githubLoginText.MuiTypography-body1 {
     p.MuiTypography-root.heading.MuiTypography-body1 {
         margin-left: 4rem;
     }
+    button.MuiButtonBase-root.MuiButton-root.MuiButton-text.googlebutton {
+        margin-left: 1rem;
+    }
   
   }
+
+ 

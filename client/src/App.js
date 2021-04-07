@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-
-import Login from './Login/login'
 import './App.css';
+import Algopage from './Algorithms/AlgoPage/algopage';
 
 class App extends Component {
 
   render(){
     return (
       <React.Fragment>
-          <Login/>
+          <Algopage/>
         
       </React.Fragment>
     );

@@ -18,6 +18,7 @@ const login = () => {
         let googleResponse  = await googleLogin(response.accessToken)
         console.log(googleResponse)
       }
+      console.log(process.env.GOOGLE_API_KEY)
 
     return(
         <>
@@ -34,6 +35,7 @@ const login = () => {
                              <Grid item  sm={6} xs={6} lg={6}>
                             
                                         <GoogleLogin
+                                          
                                             clientId={process.env.GOOGLE_API_KEY}
                                             render={renderProps => (
                                             <Button className="googlebutton" onClick={renderProps.onClick} > <i class="fab fa-google fa-5x"></i></Button>)}

@@ -4,15 +4,28 @@ import {
   AppBar, Toolbar, Typography, List, ListItem,
   withStyles, Grid, SwipeableDrawer
 } from '@material-ui/core';
+import {NavLink} from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
+
 
 const styleSheet = {
   list : {
     width : 200,
   },
+  nav:{
+    color:"grey",
+    textDecoration:"none",
+  },
   padding : {
-    paddingRight : 30,
+    paddingRight : 20,
+    color:"white",
+    textDecoration:"none",
     cursor : "pointer",
+  },
+  active : {
+    fontWeight:600,
+    color:"yellow",
+    fontSize:"1.1rem",
   },
 
   sideBarIcon : {
@@ -47,6 +60,7 @@ class navbar extends Component{
 
   //Small Screens
   createDrawer(){
+    const {classes} = this.props
     return (
       <div>
         <AppBar >
@@ -74,10 +88,10 @@ class navbar extends Component{
              onKeyDown={()=>{this.setState({drawer:false})}}>
 
             <List className = {this.props.classes.list}>
-               <ListItem key = {1} button divider> Home </ListItem>
-               <ListItem key = {2} button divider> Sign In </ListItem>
-               <ListItem key = {3} button divider> Sign up </ListItem>
-               <ListItem key = {4} button divider> About </ListItem>
+               <NavLink to='/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {1} button divider>  Home </ListItem> </NavLink>
+               <NavLink to='/DataStructure/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {2} button divider>  DataStructures </ListItem> </NavLink>
+               <NavLink to='/Algorithms/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {3} button divider>  Algorithms </ListItem> </NavLink>
+               <NavLink to='/About/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {4} button divider>  About </ListItem> </NavLink>
              </List>
 
          </div>
@@ -92,16 +106,25 @@ class navbar extends Component{
     const {classes} = this.props
     return (
         <>
+   
       <AppBar>
         <Toolbar>
-          <Typography variant = "headline" style={{flexGrow:1}} color="inherit" ><b style={{fontSize:20}}>Bruteforce</b></Typography>
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" >Home</Typography>
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" >Sign In</Typography>
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" >Sign Up</Typography>
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" >About</Typography>
+      
+          <Typography variant = "headline" style={{flexGrow:1}} color="inherit" ><b style={{fontSize:20}}><NavLink to='/' className = {classes.padding}>Bruteforce</NavLink></b></Typography>
+         
+         <Typography variant = "subheading" color="inherit" className = {classes.padding}>  <NavLink to='/' className = {classes.padding}   activeClassName={classes.active} exact> Home</NavLink></Typography>
+     
+          
+          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/DataStructures/' className = {classes.padding}>DataStructures</NavLink></Typography>
+       
+         <Typography variant = "subheading"  color="inherit" > <NavLink to='/Algorithms/' className = {classes.padding} activeClassName={classes.active} exact>Algorithms</NavLink></Typography>
+         
+          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
+         
+        
+
         </Toolbar>
       </AppBar>
-      
       </>
     )
   }

@@ -1,0 +1,20 @@
+
+.MuiPaper-root.algocard.MuiPaper-elevation2.MuiPaper-rounded {
+    cursor: pointer;
+    height: 7rem;
+    margin: 3rem;
+}
+
+.MuiPaper-root.algocard.MuiPaper-elevation2.MuiPaper-rounded:hover {
+ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+a.link {
+    text-decoration: none;
+}
+
+p.MuiTypography-root.algotitle.MuiTypography-body1 {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    font-family: sans-serif;
+}

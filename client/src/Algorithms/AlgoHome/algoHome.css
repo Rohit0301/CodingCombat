@@ -1,0 +1,32 @@
+.MuiPaper-root.mainBar.MuiPaper-elevation3.MuiPaper-rounded {
+    margin:1rem;
+    margin-top: 6rem;
+    display: flex;
+    height:auto;
+    justify-content: space-between;
+}
+p.MuiTypography-root.algoHeading.MuiTypography-body1 {
+    font-size: 2rem;
+    margin: 1rem;
+    margin-right:0;
+    font-weight: bold;
+}
+.MuiFormControl-root.MuiTextField-root.algoField {
+    margin: 1rem;
+    margin-left:.8rem;
+    width:18rem;
+}
+input.MuiInputBase-input.MuiOutlinedInput-input::placeholder {
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+
+@media only screen and (max-width: 600px) {
+    p.MuiTypography-root.algoHeading.MuiTypography-body1 {
+        font-size: 1.6rem;
+        margin-top:1.3rem;    
+    } 
+  }
+
+ 

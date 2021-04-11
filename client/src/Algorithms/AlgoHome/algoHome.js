@@ -5,7 +5,6 @@ import './algoHome.css';
 import axios from "axios";
 import {Paper,Grid, Typography, TextField} from '@material-ui/core';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -13,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
     root: {
       marginTop:"6rem",
       width: '90%',
-
-
+      height:'.5rem',
+      borderRadius:'6rem',
     },
   }));
 
@@ -90,10 +89,7 @@ export default function AlgoHome(){
            <Navbar/>
            <center>
              <LinearProgress className={classes.root}/>
-             <br>
-             </br>
-             <CircularProgress/>
-             </center>   
+            </center>   
 
         </>
     );

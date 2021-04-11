@@ -6,10 +6,12 @@ import githubLogin from "../services/githubLogin"
 import googleLogin from "../services/googleLogin"
 import ReactArcText from 'react-arc-text-fix'
 import Navbar from '../Navbar/navbar';
-import { Grid ,Paper, Typography,Link,Button} from '@material-ui/core';
+import { Grid ,Paper, Typography,Link,Button, requirePropFactory} from '@material-ui/core';
+require('dotenv').config();
 
 const login = () => {
-    const responseGithub =  async(response) => {
+    
+    const responseGithub =  async(response) => { 
         let githubResponnse  = await githubLogin(response.code)
         console.log(githubResponnse)
       }
@@ -18,7 +20,7 @@ const login = () => {
         let googleResponse  = await googleLogin(response.accessToken)
         console.log(googleResponse)
       }
-      console.log(process.env.GOOGLE_API_KEY)
+
 
     return(
         <>
@@ -33,23 +35,23 @@ const login = () => {
                             
                          <Grid container direction="row" justify="center" spacing={0}>
                              <Grid item  sm={6} xs={6} lg={6}>
-                            
-                                        <GoogleLogin
-                                          
-                                            clientId={process.env.GOOGLE_API_KEY}
-                                            render={renderProps => (
-                                            <Button className="googlebutton" onClick={renderProps.onClick} > <i class="fab fa-google fa-5x"></i></Button>)}
-                                            onSuccess={responseGoogle}
-                                            onFailure={responseGoogle}
-                                            
-                                        />
+                    
+                                <GoogleLogin
+                                    
+                                    clientId={process.env.REACT_APP_GOOGLE_API_KEY}
+                                    render={renderProps => (
+                                    <Button className="googlebutton" onClick={renderProps.onClick} > <i class="fab fa-google fa-5x"></i></Button>)}
+                                    onSuccess={responseGoogle}
+                                    onFailure={responseGoogle}
+                                    
+                                />
                              
                              </Grid>
                              <Grid item sm={6} xs={6} lg={6}>
                              
                            
                                     <GithubLogin
-                                            clientId={process.env.GITHUB_API_KEY}
+                                            clientId={process.env.REACT_APP_GITHUB_API_KEY}
                                             buttonText=""
                                             redirectUri="" 
                                             onSuccess={responseGithub}

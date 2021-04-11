@@ -34,6 +34,9 @@ button.githubButton {
     border:0;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin-left: 1rem;
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
     background-color: white;  
     cursor: pointer;
 }

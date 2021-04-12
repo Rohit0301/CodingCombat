@@ -27,8 +27,6 @@ def Algorithmvideos(request,algorithm):
         algorithms_video_serializer=AlgorithmVideoSerializer(algorithm_videos,many=True)
         return JsonResponse(algorithms_video_serializer.data, safe=False,status=200)        
 
-
-
 @api_view(['GET'])
 def Algorithmblogs(request,algorithm):
     if request.method=='GET':

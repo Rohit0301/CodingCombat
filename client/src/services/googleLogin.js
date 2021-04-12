@@ -6,7 +6,7 @@ import axios from "axios";
  */
 const googleLogin = async (accesstoken) => {
     let res = await axios.post(
-      `${process.env.GOOGLE_LOGIN_ROUTE}`,
+      `${process.env.REACT_APP_GOOGLE_LOGIN_ROUTE}`,
       {
         access_token: accesstoken,
       }

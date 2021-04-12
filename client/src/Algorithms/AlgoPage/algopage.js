@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import {Paper,Grid} from '@material-ui/core';
 import VideoCard from './videoCard';
+import BlogCard from './blogCard';
 import ProblemCard from './problemCard';
 
 
@@ -78,7 +79,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={0}>
         <Grid container direction="row" spacing={1}>
           
-           <VideoCard/>
+         <VideoCard/>
          <VideoCard/>
          <VideoCard/>
          <VideoCard/>
@@ -88,7 +89,12 @@ export default function SimpleTabs() {
 
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <BlogCard/>
+        <BlogCard/>
+        <BlogCard/>
+        <BlogCard/>
+        <BlogCard/>
+        <BlogCard/>
       </TabPanel>
       <TabPanel value={value} index={2}>
       <Grid container direction="row" spacing={1}>

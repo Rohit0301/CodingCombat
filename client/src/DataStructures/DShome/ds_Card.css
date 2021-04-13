@@ -1,0 +1,9 @@
+a.link {
+    text-decoration: none;
+}
+
+p.MuiTypography-root.dstitle.MuiTypography-body1 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    font-family: sans-serif;
+}

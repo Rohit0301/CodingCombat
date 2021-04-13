@@ -88,10 +88,10 @@ class navbar extends Component{
              onKeyDown={()=>{this.setState({drawer:false})}}>
 
             <List className = {this.props.classes.list}>
-               <NavLink to='/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {1} button divider>  Home </ListItem> </NavLink>
-               <NavLink to='/DataStructure/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {2} button divider>  DataStructures </ListItem> </NavLink>
-               <NavLink to='/Algorithms/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {3} button divider>  Algorithms </ListItem> </NavLink>
-               <NavLink to='/About/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {4} button divider>  About </ListItem> </NavLink>
+               <NavLink to='/'                className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {1} button divider>  Home           </ListItem> </NavLink>
+               <NavLink to='/DataStructures/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {2} button divider>  DataStructures </ListItem> </NavLink>
+               <NavLink to='/Algorithms/'     className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {3} button divider>  Algorithms     </ListItem> </NavLink>
+               <NavLink to='/About/'          className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {4} button divider>  About          </ListItem> </NavLink>
              </List>
 
          </div>
@@ -110,16 +110,29 @@ class navbar extends Component{
       <AppBar>
         <Toolbar>
       
-          <Typography variant = "headline" style={{flexGrow:1}} color="inherit" ><b style={{fontSize:20}}><NavLink to='/' className = {classes.padding}>Bruteforce</NavLink></b></Typography>
-         
-         <Typography variant = "subheading" color="inherit" className = {classes.padding}>  <NavLink to='/' className = {classes.padding}   activeClassName={classes.active} exact> Home</NavLink></Typography>
+        <Typography variant = "headline"   color="inherit" style={{flexGrow:1}} > 
+          <b style={{fontSize:20}}>
+            <NavLink to='/' className = {classes.padding}>Bruteforce</NavLink>
+          </b>
+        </Typography> 
+        
+        
+        <Typography variant = "subheading" color="inherit" className = {classes.padding}>
+          <NavLink to='/'                className = {classes.padding}   activeClassName={classes.active} exact>Home</NavLink>
+        </Typography>
      
           
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/DataStructures/' className = {classes.padding}>DataStructures</NavLink></Typography>
+        <Typography variant = "subheading" color="inherit" className = {classes.padding} >
+          <NavLink to='/DataStructures/' className = {classes.padding} activeClassName={classes.active} exact>DataStructures</NavLink>
+        </Typography>
        
-         <Typography variant = "subheading"  color="inherit" > <NavLink to='/Algorithms/' className = {classes.padding} activeClassName={classes.active} exact>Algorithms</NavLink></Typography>
+        <Typography variant = "subheading" color="inherit" className = {classes.padding}>
+          <NavLink to='/Algorithms/'     className = {classes.padding} activeClassName={classes.active} exact>Algorithms</NavLink>
+        </Typography>
          
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
+        <Typography variant = "subheading" color="inherit" className = {classes.padding}>
+          <NavLink to='/About/'          className = {classes.padding} activeClassName={classes.active} exact>About</NavLink>
+        </Typography>
          
         
 

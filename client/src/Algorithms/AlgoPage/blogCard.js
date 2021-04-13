@@ -8,7 +8,7 @@ export default function blogCard(){
                 <Paper className="blogcard" elevation={2}>
                 
                         <Typography display="block" className="blogTitle">Blog Heading</Typography> 
-                        <Button className="solveButton">Solve</Button>
+                        <Button className="solveButton">SHOW</Button>
 
                 </Paper>
             </Grid>   

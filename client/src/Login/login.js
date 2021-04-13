@@ -24,7 +24,6 @@ const login = () => {
 
     return(
         <>
-          <Navbar/>
             <Grid container className="main">
                 <Grid item className="item1" x5={8}>
                     <Paper elevation={3} className="paper">

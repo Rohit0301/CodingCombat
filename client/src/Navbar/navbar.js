@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import SimpleDialogDemo from './Dialog';
 
 const styleSheet = {
   list : {
@@ -72,6 +72,7 @@ class navbar extends Component{
 
               <Typography color="inherit" variant = "headline">Bruteforce</Typography>
               <Typography color="inherit" variant = "headline"></Typography>
+              <SimpleDialogDemo/>
             </Grid>
           </Toolbar>
         </AppBar>
@@ -120,7 +121,7 @@ class navbar extends Component{
          <Typography variant = "subheading"  color="inherit" > <NavLink to='/Algorithms/' className = {classes.padding} activeClassName={classes.active} exact>Algorithms</NavLink></Typography>
          
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
-         
+          <SimpleDialogDemo/>
         
 
         </Toolbar>

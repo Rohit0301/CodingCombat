@@ -6,6 +6,7 @@ import Algohome from './Algorithms/AlgoHome/algoHome';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Login from './Login/login';
+import Home from './Home/Home';
 
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
               <Algohome />
             </Route>
             <Route path="/" exact>
-              <Login />
+              <Home />
             </Route>
             <Route path="/Algorithms/:name" exact>
               <Algopage />

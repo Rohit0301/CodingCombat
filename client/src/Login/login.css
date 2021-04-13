@@ -1,13 +1,11 @@
 .MuiPaper-root.paper.MuiPaper-elevation3.MuiPaper-rounded {
     height: 30rem;
     width: 25rem;   
-    margin-top:2rem;
-    background-color:#e0d7bd;
+    /* background-color:#e0d7bd; */
    
 }
 .MuiGrid-root.main.MuiGrid-container {
     justify-content: center;
-    margin-top: 5rem;
 }
 .MuiGrid-root.innerDiv.MuiGrid-container {
     justify-content: center;

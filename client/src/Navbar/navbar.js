@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   AppBar, Toolbar, Typography, List, ListItem,
-  withStyles, Grid, SwipeableDrawer
+  withStyles, Grid, SwipeableDrawer,Button
 } from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -17,7 +17,7 @@ const styleSheet = {
     textDecoration:"none",
   },
   padding : {
-    paddingRight : 20,
+    paddingRight : 15,
     color:"white",
     textDecoration:"none",
     cursor : "pointer",
@@ -38,26 +38,49 @@ const styleSheet = {
 class navbar extends Component{
   constructor(props){
     super(props);
-    this.state = {drawerActivate:false, drawer:false};
+    this.state = {drawerActivate:false, drawer:false,isLogin:false};
     this.createDrawer = this.createDrawer.bind(this);
     this.destroyDrawer = this.destroyDrawer.bind(this);
+    this.handleLogout=this.handleLogout.bind(this);
   }
-
+  handleLogout() {
+    this.setState(state => ({
+      isLogin:false
+    }));
+    localStorage.clear();
+  }
   componentWillMount(){
-    if(window.innerWidth <= 600){
-      this.setState({drawerActivate:true});
-    }
-
-    window.addEventListener('resize',()=>{
       if(window.innerWidth <= 600){
         this.setState({drawerActivate:true});
       }
-      else{
-        this.setState({drawerActivate:false})
+
+
+      const key=localStorage.getItem("userKey");
+      if(key){
+        this.setState({
+          isLogin:true,
+        });
       }
-    });
+      else{
+        this.setState({
+          isLogin:false,
+        });
+      }
+
+    
+      window.addEventListener('resize',()=>{
+        if(window.innerWidth <= 600){
+          this.setState({drawerActivate:true});
+        }
+        else{
+          this.setState({drawerActivate:false})
+        }
+      });
   }
 
+
+
+  
   //Small Screens
   createDrawer(){
     const {classes} = this.props
@@ -72,7 +95,7 @@ class navbar extends Component{
 
               <Typography color="inherit" variant = "headline">Bruteforce</Typography>
               <Typography color="inherit" variant = "headline"></Typography>
-              <SimpleDialogDemo/>
+               {(this.state.isLogin)?null:<SimpleDialogDemo/>}
             </Grid>
           </Toolbar>
         </AppBar>
@@ -88,12 +111,19 @@ class navbar extends Component{
              onClick={()=>{this.setState({drawer:false})}}
              onKeyDown={()=>{this.setState({drawer:false})}}>
 
+            {(this.state.isLogin)?
             <List className = {this.props.classes.list}>
                <NavLink to='/'                className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {1} button divider>  Home           </ListItem> </NavLink>
                <NavLink to='/DataStructures/' className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {2} button divider>  DataStructures </ListItem> </NavLink>
                <NavLink to='/Algorithms/'     className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {3} button divider>  Algorithms     </ListItem> </NavLink>
                <NavLink to='/About/'          className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {4} button divider>  About          </ListItem> </NavLink>
+                <ListItem onClick={this.handleLogout} key = {4} button divider>  Logout  </ListItem>
              </List>
+             :<List className = {this.props.classes.list}>
+                <NavLink to='/'                className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {1} button divider>  Home           </ListItem> </NavLink>
+                <NavLink to='/About/'          className = {classes.nav}   activeClassName={classes.active} exact> <ListItem key = {4} button divider>  About          </ListItem> </NavLink>
+             </List>
+             }
 
          </div>
        </SwipeableDrawer>
@@ -105,6 +135,7 @@ class navbar extends Component{
   //Larger Screens
   destroyDrawer(){
     const {classes} = this.props
+    if(this.state.isLogin){
     return (
         <>
    
@@ -119,37 +150,57 @@ class navbar extends Component{
         
         
         <Typography variant = "subheading" color="inherit" className = {classes.padding}>
-          <NavLink to='/'                className = {classes.padding}   activeClassName={classes.active} exact>Home</NavLink>
+           <NavLink to='/'                className = {classes.padding}   activeClassName={classes.active} exact>Home</NavLink>
         </Typography>
-     
-          
         <Typography variant = "subheading" color="inherit" className = {classes.padding} >
-          <NavLink to='/DataStructures/' className = {classes.padding} activeClassName={classes.active} exact>DataStructures</NavLink>
+           <NavLink to='/DataStructures/' className = {classes.padding} activeClassName={classes.active} exact>DataStructures</NavLink>
+        </Typography>
+   
+         <Typography variant = "subheading" color="inherit" className = {classes.padding}>
+           <NavLink to='/Algorithms/'     className = {classes.padding} activeClassName={classes.active} exact>Algorithms</NavLink>
         </Typography>
        
-        <Typography variant = "subheading" color="inherit" className = {classes.padding}>
-          <NavLink to='/Algorithms/'     className = {classes.padding} activeClassName={classes.active} exact>Algorithms</NavLink>
-        </Typography>
+        <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
+        <Button style={{backgroundColor:"darkslategrey",color:"white"}} onClick={this.handleLogout}>
+           Logout
+         </Button>
+        
          
- 
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
-          <SimpleDialogDemo/>
-        {/* <Typography variant = "subheading" color="inherit" className = {classes.padding}>
-          <NavLink to='/About/'          className = {classes.padding} activeClassName={classes.active} exact>About</NavLink>
-        </Typography> */}
-        
-        
-
         </Toolbar>
       </AppBar>
       </>
     )
   }
+else{
+  return (
+    <>
+
+  <AppBar>
+    <Toolbar>
+  
+    <Typography variant = "headline"   color="inherit" style={{flexGrow:1}} > 
+      <b style={{fontSize:20}}>
+        <NavLink to='/' className = {classes.padding}>Bruteforce</NavLink>
+      </b>
+    </Typography> 
+    <Typography variant = "subheading" color="inherit" className = {classes.padding}>
+      <NavLink to='/'                className = {classes.padding}   activeClassName={classes.active} exact>Home</NavLink>
+    </Typography>
+    <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
+    <SimpleDialogDemo/>
+    </Toolbar>
+  </AppBar>
+  </>
+)
+}
+}
 
   render(){
     return(
+
       <div>
         {this.state.drawerActivate ? this.createDrawer() : this.destroyDrawer()}
+      
       </div>
     );
   }

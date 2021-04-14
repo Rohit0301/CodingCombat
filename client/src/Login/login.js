@@ -1,34 +1,57 @@
-import React from "react"
+import {React,useState,useEffect} from "react"
 import './login.css'
 import GoogleLogin from 'react-google-login'
 import GithubLogin from 'react-github-login'
 import githubLogin from "../services/githubLogin"
 import googleLogin from "../services/googleLogin"
 import ReactArcText from 'react-arc-text-fix'
-import Navbar from '../Navbar/navbar';
-import { Grid ,Paper, Typography,Link,Button, requirePropFactory} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid ,Paper, Typography,Link,Button, requirePropFactory, LinearProgress} from '@material-ui/core';
 require('dotenv').config();
 
-const login = () => {
+const useStyles = makeStyles((theme) => ({
+    root: {
+      width: '90%',
+      height:'.4rem',
+      borderRadius:'6rem',
+    },
+  }));
+
+
+
+
+
+export default function Login(props) {
+    const classes=useStyles();
     
+    // states
+    const [isLoading, setIsLoading] = useState(false);
+
     const responseGithub =  async(response) => { 
-        let githubResponnse  = await githubLogin(response.code)
-        console.log(githubResponnse)
+        setIsLoading(true);
+        let githubResponnse  = await githubLogin(response.code);
+         localStorage.setItem('userKey', response.code);
+         props.handleChange(response.code);
       }
   
       const responseGoogle = async(response) => {
-        let googleResponse  = await googleLogin(response.accessToken)
-        console.log(googleResponse)
+        setIsLoading(true);
+        let googleResponse  = await googleLogin(response.accessToken);
+        localStorage.setItem('userKey', response.accessToken);
+        props.handleChange(response.accessToken);
       }
 
-
+ 
     return(
         <>
             <Grid container className="main">
+                 
                 <Grid item className="item1" x5={8}>
                     <Paper elevation={3} className="paper">
                         <Grid container direction="column"  className="innerDiv">
-                       
+                           <center>
+                                {(isLoading)?<LinearProgress className={classes.root}/>:null}
+                            </center> 
                             <Typography className="heading">Join Bruteforce</Typography>
                             <br></br>
                             
@@ -36,13 +59,11 @@ const login = () => {
                              <Grid item  sm={6} xs={6} lg={6}>
                     
                                 <GoogleLogin
-                                    
                                     clientId={process.env.REACT_APP_GOOGLE_API_KEY}
                                     render={renderProps => (
                                     <Button className="googlebutton" onClick={renderProps.onClick} > <i class="fab fa-google fa-5x"></i></Button>)}
                                     onSuccess={responseGoogle}
                                     onFailure={responseGoogle}
-                                    
                                 />
                              
                              </Grid>
@@ -86,4 +107,3 @@ const login = () => {
         </>
     );
 }
-export default login;

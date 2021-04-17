@@ -1,10 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import PropTypes from 'prop-types';
-
+import {Redirect} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import Login from '../Login/login';
-
 
 
 
@@ -12,9 +11,6 @@ function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
   const [UserAuth, setUserAuth] = useState(null);
   
-  useEffect(() => {
-  
-  }, [])
   const UserLogin=(key)=>{
     setUserAuth(key);
  }
@@ -30,6 +26,7 @@ function SimpleDialog(props) {
    }
    else{
      window.location.reload(false);
+     return null;
    }
   
 }
@@ -38,10 +35,10 @@ function SimpleDialog(props) {
 SimpleDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired,
+  selectedValue: PropTypes.string,
 };
 
-export default function SimpleDialogDemo(props) {
+ function SimpleDialogDemo(props) {
   const [open, setOpen] = React.useState(false);
  
 
@@ -58,10 +55,11 @@ export default function SimpleDialogDemo(props) {
 
   return ( 
     <div>
-      <Button style={{backgroundColor:"Yellow"}} onClick={handleClickOpen}>
+      <Button style={{backgroundColor:"#B00020",color:"white"}} onClick={handleClickOpen}>
         Join Bruteforce
       </Button>
       <SimpleDialog open={open} onClose={handleClose} />
     </div>
   );
 }
+export default SimpleDialogDemo;

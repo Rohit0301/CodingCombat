@@ -6,11 +6,23 @@
 }
 
 
-/* @media only screen and (max-width: 600px) {
-    .MuiGrid-root.mainGrid.MuiGrid-grid-xs-10.MuiGrid-grid-sm-10.MuiGrid-grid-lg-11 {
-        width: 100%;
-        height: 35rem;
-        margin-top:2rem;
-    }  
-  
-  } */
+a.navbar-padding-90.navbar-active-9 {
+    padding: 0;
+}
+a.navbar-padding-3.navbar-active-4 {
+    padding: 0;
+}
+header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.mui-fixed.MuiPaper-elevation4 {
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: none;
+}
+a.withRouter\(navbar\)-padding-47.active {
+    color: black;
+}
+.withRouter\(navbar\)-padding-20 {
+    color: black;
+    /* color: white; */
+    cursor: pointer;
+    text-decoration: none;
+}

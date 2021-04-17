@@ -4,9 +4,14 @@ import {
   AppBar, Toolbar, Typography, List, ListItem,
   withStyles, Grid, SwipeableDrawer,Button
 } from '@material-ui/core';
-import {NavLink} from 'react-router-dom';
+import {NavLink,withRouter } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import SimpleDialogDemo from './Dialog';
+import './navbar.css';
+// import googleLogin from "../services/googleLogin"
+// import githubLogin from "../services/githubLogin"
+
+
 
 const styleSheet = {
   list : {
@@ -16,16 +21,16 @@ const styleSheet = {
     color:"grey",
     textDecoration:"none",
   },
+  padding1:{
+    paddingRight : 22,
+  },
   padding : {
-    paddingRight : 15,
-    color:"white",
+    color:"black",
     textDecoration:"none",
     cursor : "pointer",
   },
   active : {
-    fontWeight:600,
-    color:"yellow",
-    fontSize:"1.1rem",
+    borderBottom:".3rem inset #333"
   },
 
   sideBarIcon : {
@@ -38,38 +43,62 @@ const styleSheet = {
 class navbar extends Component{
   constructor(props){
     super(props);
-    this.state = {drawerActivate:false, drawer:false,isLogin:false};
+    this.state = {drawerActivate:false, drawer:false,isLogin:false,status:""};
     this.createDrawer = this.createDrawer.bind(this);
     this.destroyDrawer = this.destroyDrawer.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
   }
+
+
+
   handleLogout() {
     this.setState(state => ({
       isLogin:false
     }));
     localStorage.clear();
-  }
+    this.props.history.push("/");
+   }
+
+//     Authentication =  async(response,code) => {
+//     console.log(response);
+//     let Response;
+//     if(code==="gl205d3125l9")
+//          Response  = await googleLogin(response);
+//     if(code==="th156df785n")       
+//          Response =await githubLogin(response);
+//     console.log(Response+" hit");
+//     if(Response===200){
+//       this.setState({
+//         isLogin:true
+//       });
+//     }
+//     else{
+//       this.setState({
+//         isLogin:false,
+//       });
+//   }
+// }
+  
+
   componentWillMount(){
-      if(window.innerWidth <= 600){
+      if(window.innerWidth <= 725){
         this.setState({drawerActivate:true});
       }
 
-
-      const key=localStorage.getItem("userKey");
-      if(key){
-        this.setState({
-          isLogin:true,
-        });
-      }
-      else{
-        this.setState({
-          isLogin:false,
-        });
-      }
-
+      const key=localStorage.getItem("gl205d3125l9");
+        if(key!=null ){
+          this.setState({
+            isLogin:true
+          });
+        }
+        else{
+          this.setState({
+            isLogin:false
+          });
+        }
     
       window.addEventListener('resize',()=>{
-        if(window.innerWidth <= 600){
+        if(window.innerWidth <= 725){
           this.setState({drawerActivate:true});
         }
         else{
@@ -80,12 +109,14 @@ class navbar extends Component{
 
 
 
+
+
   
   //Small Screens
   createDrawer(){
     const {classes} = this.props
     return (
-      <div>
+      <React.Fragment>
         <AppBar >
           <Toolbar>
             <Grid container direction = "row" justify = "space-between" alignItems="center">
@@ -93,8 +124,8 @@ class navbar extends Component{
                 className = {this.props.classes.sideBarIcon}
                 onClick={()=>{this.setState({drawer:true})}} />
 
-              <Typography color="inherit" variant = "headline">Bruteforce</Typography>
-              <Typography color="inherit" variant = "headline"></Typography>
+              <Typography color="inherit" variant = "body1">Bruteforce</Typography>
+              <Typography color="inherit" variant = "body1"></Typography>
                {(this.state.isLogin)?null:<SimpleDialogDemo/>}
             </Grid>
           </Toolbar>
@@ -128,7 +159,7 @@ class navbar extends Component{
          </div>
        </SwipeableDrawer>
 
-      </div>
+      </React.Fragment>
     );
   }
 
@@ -142,26 +173,26 @@ class navbar extends Component{
       <AppBar>
         <Toolbar>
       
-        <Typography variant = "headline"   color="inherit" style={{flexGrow:1}} > 
+        <Typography variant = "body1"   color="inherit" style={{flexGrow:1}} > 
           <b style={{fontSize:20}}>
             <NavLink to='/' className = {classes.padding}>Bruteforce</NavLink>
           </b>
         </Typography> 
         
         
-        <Typography variant = "subheading" color="inherit" className = {classes.padding}>
-           <NavLink to='/'                className = {classes.padding}   activeClassName={classes.active} exact>Home</NavLink>
+        <Typography variant = "body1" color="inherit" className = {classes.padding1}>
+           <NavLink to='/'  className = {classes.padding}   activeClassName={classes.active} exact>Home</NavLink>
         </Typography>
-        <Typography variant = "subheading" color="inherit" className = {classes.padding} >
+        <Typography variant = "body1" color="inherit" className = {classes.padding1} >
            <NavLink to='/DataStructures/' className = {classes.padding} activeClassName={classes.active} exact>DataStructures</NavLink>
         </Typography>
    
-         <Typography variant = "subheading" color="inherit" className = {classes.padding}>
-           <NavLink to='/Algorithms/'     className = {classes.padding} activeClassName={classes.active} exact>Algorithms</NavLink>
+         <Typography variant = "body1" color="inherit" className = {classes.padding1}>
+           <NavLink to='/Algorithms/' className = {classes.padding} activeClassName={classes.active} >Algorithms</NavLink>
         </Typography>
        
-        <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
-        <Button style={{backgroundColor:"darkslategrey",color:"white"}} onClick={this.handleLogout}>
+        <Typography variant = "body1" className = {classes.padding1} color="#333" ><NavLink to='/About/' className = {classes.padding} activeClassName={classes.active} exact>About</NavLink></Typography>
+        <Button style={{backgroundColor:"#333",color:"white"}} onClick={this.handleLogout}>
            Logout
          </Button>
         
@@ -172,21 +203,24 @@ class navbar extends Component{
     )
   }
 else{
+
   return (
     <>
 
   <AppBar>
     <Toolbar>
   
-    <Typography variant = "headline"   color="inherit" style={{flexGrow:1}} > 
+    <Typography variant = "body1"   color="inherit" style={{flexGrow:1}} > 
       <b style={{fontSize:20}}>
         <NavLink to='/' className = {classes.padding}>Bruteforce</NavLink>
       </b>
     </Typography> 
-    <Typography variant = "subheading" color="inherit" className = {classes.padding}>
+    <Typography variant = "body1" color="inherit" className = {classes.padding1}>
       <NavLink to='/'                className = {classes.padding}   activeClassName={classes.active} exact>Home</NavLink>
     </Typography>
-    <Typography variant = "subheading" className = {classes.padding} color="inherit" ><NavLink to='/About/' className = {classes.padding}>About</NavLink></Typography>
+    <Typography variant = "body1" className = {classes.padding1} color="inherit" >
+      <NavLink to='/About/' className = {classes.padding} activeClassName={classes.active} exact>About</NavLink>
+    </Typography>
     <SimpleDialogDemo/>
     </Toolbar>
   </AppBar>
@@ -212,4 +246,4 @@ navbar.propTypes = {
 
 
 
-export default withStyles(styleSheet)(navbar);
+export default withStyles(styleSheet)(withRouter(navbar));

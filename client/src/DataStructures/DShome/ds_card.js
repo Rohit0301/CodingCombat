@@ -26,7 +26,7 @@ function DScard(props) {
             <NavLink to={`/DataStructures/${name}/`}
                 className="link" exact>
             
-                <Paper className={classes.root} variant="outlined" >
+                <Paper className="DScard" elevation={2} >
                     <center>
                         <Typography className="dstitle">
                             {name}

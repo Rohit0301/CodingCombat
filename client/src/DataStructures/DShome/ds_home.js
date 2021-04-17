@@ -78,9 +78,9 @@ class DShome extends Component {
                     <Grid container direction="row" spacing={2}>
                         
                         {
-                            this.state.names.map( d => {
+                            this.state.names.map( (d,index) => {
                                 //console.log(d)
-                                return <DScard name={d} />
+                                return <DScard name={d} key={index} />
                                 })
                         }
                     </Grid>

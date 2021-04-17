@@ -4,6 +4,14 @@ a.link {
 
 p.MuiTypography-root.dstitle.MuiTypography-body1 {
     font-size: 1.5rem;
-    padding-top: 1rem;
+    padding-top: 2rem;
     font-family: sans-serif;
+}
+.MuiPaper-root.DScard.MuiPaper-elevation2.MuiPaper-rounded:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+   }
+.MuiPaper-root.DScard.MuiPaper-elevation2.MuiPaper-rounded {
+    cursor: pointer;
+    height: 7rem;
+    margin: 3rem;
 }

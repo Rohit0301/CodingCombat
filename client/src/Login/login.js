@@ -28,16 +28,18 @@ export default function Login(props) {
     const [isLoading, setIsLoading] = useState(false);
 
     const responseGithub =  async(response) => { 
-        setIsLoading(true);
-        let githubResponnse  = await githubLogin(response.code);
-         localStorage.setItem('userKey', response.code);
+          setIsLoading(true);
+          console.log(response);
+         let githubResponnse  = await githubLogin(response.code);
+         localStorage.setItem('gl205d3125l9', response.code);
          props.handleChange(response.code);
       }
-  
+      
       const responseGoogle = async(response) => {
         setIsLoading(true);
+        console.log(response);
         let googleResponse  = await googleLogin(response.accessToken);
-        localStorage.setItem('userKey', response.accessToken);
+        localStorage.setItem('gl205d3125l9', response.accessToken);
         props.handleChange(response.accessToken);
       }
 
@@ -61,7 +63,7 @@ export default function Login(props) {
                                 <GoogleLogin
                                     clientId={process.env.REACT_APP_GOOGLE_API_KEY}
                                     render={renderProps => (
-                                    <Button className="googlebutton" onClick={renderProps.onClick} > <i class="fab fa-google fa-5x"></i></Button>)}
+                                    <Button className="googlebutton" onClick={renderProps.onClick} > <i className="fab fa-google fa-5x"></i></Button>)}
                                     onSuccess={responseGoogle}
                                     onFailure={responseGoogle}
                                 />
@@ -78,7 +80,7 @@ export default function Login(props) {
                                             onFailure={responseGithub}
                                             className="githubButton"
                                         
-                                    ><i class="fab fa-github fa-5x"></i></GithubLogin>
+                                    ><i className="fab fa-github fa-5x"></i></GithubLogin>
                              </Grid>
 
                              <Grid item sm={12} xs={12} lg={12}>

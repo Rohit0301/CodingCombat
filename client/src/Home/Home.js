@@ -1,13 +1,15 @@
+import { Paper, Typography } from '@material-ui/core';
 import React from 'react';
 import Navbar from '../Navbar/navbar';
+import './Home.css'
 export default function Home (){
     return(
         <>
           <Navbar/>
-          <br>
-          </br>
-          <br></br>
-          <h1>This is home page</h1>
+
+           <Paper className="home">
+
+           </Paper>
         </>
     );
 }

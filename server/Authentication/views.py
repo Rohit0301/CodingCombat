@@ -5,7 +5,6 @@ from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from allauth.socialaccount.providers.linkedin.views import LinkedInOAuthAdapter
 from allauth.socialaccount.providers.twitter.views import TwitterOAuthAdapter
-
 from rest_auth.registration.views import SocialLoginView,SocialConnectView
 
 

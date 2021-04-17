@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # Create your views here.
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -21,10 +19,10 @@ def DataStructures(request):
         return JsonResponse(DataStructures_serializer.data, safe=False,status=200)
 
 @api_view(['GET'])
-def DataStructurevideos(request,DataStructure):
+def DataStructurevideos(request,datastructure):
     if request.method=='GET':
         try:
-            DataStructure_videos=DataStructure.objects.get(DataStructure_Name=DataStructure).DataStructurevideo_set.all()
+            DataStructure_videos=DataStructure.objects.get(DataStructure_Name=datastructure).datastructurevideo_set.all()
         except:
             return HttpResponse(status=404)   
         DataStructures_video_serializer=DataStructureVideoSerializer(DataStructure_videos,many=True)
@@ -33,20 +31,21 @@ def DataStructurevideos(request,DataStructure):
 
 
 @api_view(['GET'])
-def DataStructureblogs(request,DataStructure):
+def DataStructureblogs(request,datastructure):
     if request.method=='GET':
         try:
-            DataStructure_blogs=DataStructure.objects.get(DataStructure_Name=DataStructure).DataStructureblog_set.all()
+            DataStructure_blogs=DataStructure.objects.get(DataStructure_Name=datastructure).datastructureblog_set.all()
+            print(DataStructure_blogs)
         except:
             return HttpResponse(status=404)   
         DataStructures_blog_serializer=DataStructureBlogSerializer(DataStructure_blogs,many=True)
         return JsonResponse(DataStructures_blog_serializer.data, safe=False,status=200)                
 
 @api_view(['GET'])
-def DataStructurequestions(request,DataStructure):
+def DataStructurequestions(request,datastructure):
     if request.method=='GET':
         try:
-            DataStructure_questions=DataStructure.objects.get(DataStructure_Name=DataStructure).DataStructurequestion_set.all()
+            DataStructure_questions=DataStructure.objects.get(DataStructure_Name=datastructure).datastructurequestion_set.all()
         except:
             return HttpResponse(status=404)   
         DataStructures_question_serializer=DataStructureQuestionSerializer(DataStructure_questions,many=True)

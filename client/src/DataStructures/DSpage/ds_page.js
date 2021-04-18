@@ -1,4 +1,5 @@
-import React from 'react';
+import React , { useState, useEffect } from 'react';
+import axios from 'axios'
 
 import Navbar from '../../Navbar/navbar';
 import '../../Algorithms/AlgoPage/algopage.css';
@@ -54,15 +55,31 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  
+  const BASE_URL = 'http://localhost:8000/DataStrcuture/';
+  const endPoints = {
+    "Videos": "Videos",
+    "Blogs": "Blogs",
+    "Questions": "Questions"
+    }
+    
+  useEffect(() => {
+    axios
+      .get('http://localhost:8000/')
+  
+    console.log(window.location.href)
+  })
 
   return (
     <div className={classes.root}>
+      
       <Navbar/>
+      
       <Paper className="main">
         <Tabs value={value} 
         onChange={handleChange} 
@@ -75,6 +92,7 @@ export default function SimpleTabs() {
           <Tab label="Practice Problem" {...a11yProps(2)} />
         </Tabs>
       </Paper>
+      
       <TabPanel value={value} index={0}>
         <Grid container direction="row" spacing={1}>
           
@@ -87,6 +105,7 @@ export default function SimpleTabs() {
          </Grid>  
 
       </TabPanel>
+      
       <TabPanel value={value} index={1}>
         <BlogCard/>
         <BlogCard/>
@@ -95,9 +114,9 @@ export default function SimpleTabs() {
         <BlogCard/>
         <BlogCard/>
       </TabPanel>
+      
       <TabPanel value={value} index={2}>
-      <Grid container direction="row" spacing={1}>
-          
+      <Grid container direction="row" spacing={1}>    
         <ProblemCard/>
         <ProblemCard/>
         <ProblemCard/>
@@ -106,6 +125,7 @@ export default function SimpleTabs() {
         <ProblemCard/>
         </Grid>  
       </TabPanel>
+
     </div>
   );
 }

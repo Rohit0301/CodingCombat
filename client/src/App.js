@@ -15,23 +15,23 @@ import Home from './Home/Home';
 
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state={isLogin:false};
-  }
+  // constructor(){
+  //   super();
+  //   this.state={isLogin:false};
+  // }
   componentDidMount(){
-    const key=localStorage.getItem("userKey");
-    if(key==null){
-     this.setState({
-       isLogin:false
-     });
-    }
-    else{
-      this.setState({
-        isLogin:true
-      });
-    }
-    console.log(this.state.isLogin);
+    // const key=localStorage.getItem("userKey");
+    // if(key==null){
+    //  this.setState({
+    //    isLogin:true
+    //  });
+    // }
+    // else{
+    //   this.setState({
+    //     isLogin:true
+    //   });
+    // }
+    // console.log(this.state.isLogin);
   }
   render(){
     const history = createBrowserHistory();
@@ -43,15 +43,15 @@ class App extends Component {
             
             <Route path="/"           exact component={Home}    />
             <Route path="/Algorithms" >
-              {this.state.isLogin ?  <Algohome />: <Redirect to="/" /> }
+              {/* {this.state.isLogin ?  <Algohome />: <Redirect to="/" /> } */}
             </Route>  
             
             <Route path="/Algorithms/:name" exact>
               <Algopage />
             </Route>
 
-            <Route path="/DataStructures">
-              {this.state.isLogin ?  <DShome />: <Redirect to="/" /> }
+            <Route path="/DataStructures" exact component={DShome}>
+              {/* {this.state.isLogin ?  <DShome />: <Redirect to="/" /> } */}
             </Route>  
             <Route path="/DataStructures/:name" exact>
               <DSpage />

@@ -81,7 +81,7 @@ class navbar extends Component{
   
 
   componentWillMount(){
-      if(window.innerWidth <= 725){
+      if(window.innerWidth <= 600){
         this.setState({drawerActivate:true});
       }
 
@@ -98,7 +98,7 @@ class navbar extends Component{
         }
     
       window.addEventListener('resize',()=>{
-        if(window.innerWidth <= 725){
+        if(window.innerWidth <= 600){
           this.setState({drawerActivate:true});
         }
         else{
@@ -124,7 +124,7 @@ class navbar extends Component{
                 className = {this.props.classes.sideBarIcon}
                 onClick={()=>{this.setState({drawer:true})}} />
 
-              <Typography color="inherit" variant = "body1">Bruteforce</Typography>
+              <Typography color="inherit" variant = "body1" className="brute">Bruteforce</Typography>
               <Typography color="inherit" variant = "body1"></Typography>
                {(this.state.isLogin)?null:<SimpleDialogDemo/>}
             </Grid>

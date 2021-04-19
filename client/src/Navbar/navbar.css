@@ -1,9 +1,3 @@
-.MuiGrid-root.mainGrid.MuiGrid-grid-xs-10.MuiGrid-grid-sm-10.MuiGrid-grid-lg-11 {
-    width: 100%;
-    height: 3rem;
-    background-color: black;
-    margin-top:1rem;
-}
 
 
 a.navbar-padding-90.navbar-active-9 {
@@ -12,11 +6,7 @@ a.navbar-padding-90.navbar-active-9 {
 a.navbar-padding-3.navbar-active-4 {
     padding: 0;
 }
-header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.mui-fixed.MuiPaper-elevation4 {
-    background-color: white;
-    border-radius: 2rem;
-    box-shadow: none;
-}
+
 a.withRouter\(navbar\)-padding-47.active {
     color: black;
 }
@@ -25,4 +15,46 @@ a.withRouter\(navbar\)-padding-47.active {
     /* color: white; */
     cursor: pointer;
     text-decoration: none;
+}
+header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.mui-fixed.MuiPaper-elevation4 {
+    background-color: bisque;
+    /* width: 94%; */
+    position: sticky;
+    /* left: 3%; */
+}
+
+.MuiPaper-root.about.MuiPaper-elevation1.MuiPaper-rounded {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    /* border-radius: 1rem; */
+    background-color: #af80da;
+    margin-top: 1rem;
+    margin-bottom: 1.1rem;
+}
+.MuiGrid-root.main {
+    background-color: white;
+    position: fixed;
+    /* top: 10%; */
+    left: 3%;
+    right: 3%;
+    /* bottom: 10%; */
+    /* overflow: scroll; */
+    margin-top: 2rem;
+    /* width: auto; */
+    height: auto;
+}
+p.MuiTypography-root.heading1.MuiTypography-body1 {
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+}
+p.MuiTypography-root.abouttext.MuiTypography-body1 {
+    /* color: black; */
+    color: black;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: cursive;
+    font-size: 1.2rem;
+    padding-bottom: 7rem;
 }

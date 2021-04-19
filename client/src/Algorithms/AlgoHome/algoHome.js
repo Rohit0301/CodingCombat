@@ -31,7 +31,7 @@ export default function AlgoHome(){
 
     // Api calling
     useEffect(() => {
-        const res = axios.get(`http://localhost:8000/Algorithms/`)
+        const res = axios.get(`https://bruteforce-dsa-backend-api.herokuapp.com/Algorithms/`)
         .then((response) => {
             setAlgo(response["data"])
             setIsLoading(false);

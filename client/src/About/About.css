@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=amarnath&display=swap');
 p.MuiTypography-root.abouttext.MuiTypography-body1 {
     /* color: black; */
     color: black;
     margin-top: 1rem;
     padding-bottom: 1rem;
-    font-family: cursive;
+    font-family: amarnath;
     font-size: 1.2rem;
     padding-bottom: 7rem;
 }
@@ -19,4 +20,24 @@ p.MuiTypography-root.heading1.MuiTypography-body1 {
     /* border-radius: 1rem; */
     background-color: #af80da;
     margin-top: 1rem;
+}
+p.MuiTypography-root.brute.MuiTypography-body1.MuiTypography-colorInherit {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.MuiGrid-root.main {
+    background-color: white;
+    position: fixed;
+    /* top: 10%; */
+    left: 3%;
+    right: 3%;
+    /* bottom: 10%; */
+    /* overflow: scroll; */
+    margin-top: 2rem;
+    /* width: auto; */
+    height: auto;
+}
+svg.MuiSvgIcon-root.withRouter\(navbar\)-sideBarIcon-57 {
+    color: black;
 }

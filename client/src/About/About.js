@@ -6,9 +6,9 @@ import ScrollCard from './scrollcard';
 export default function About (){
     return(
         <>
-
+          <Navbar/>
         <Grid className="main">
-                <Navbar/>
+             
                 <Grid container direction="row" className="aboutbody">
                     <Grid item className="left" lg={12} sm={12} md={12} xs={12}>
                             <Paper className="about">
@@ -22,11 +22,12 @@ export default function About (){
                                 </center>
                             </Paper>
                    </Grid>
-                   <Grid item className="right" lg={12} sm={12} md={12}>
+                   {/* <Grid item className="right" lg={12} sm={12} md={12}>
                    <Paper className="developer">
                                 <center>
                                 <Typography className="heading1">DEVELOPERS</Typography>
                                 <Grid container direction="row">
+                                
                                     <Grid item className="card" lg={12} sm={12} md={12} xs={12}>
 
                                     </Grid>
@@ -45,7 +46,7 @@ export default function About (){
                                 </Grid>
                                 </center>
                             </Paper>
-                   </Grid>
+                   </Grid> */}
                 </Grid>
         </Grid>
 

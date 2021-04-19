@@ -1,0 +1,22 @@
+.MuiPaper-root.videocard.MuiPaper-elevation2.MuiPaper-rounded {
+    height: 15rem;
+    margin: 1rem;
+}
+p.MuiTypography-root.videoTitle.MuiTypography-body1 {
+    font-size: 2.5rem;
+    padding-top: 0rem;
+    color:rgb(112, 106, 106);
+}
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.videoButton {
+    width: 18rem;
+    height: 3rem;
+}
+
+svg.MuiSvgIcon-root.playButton {
+    font-size: 4rem;
+    color: black;
+    cursor: pointer;
+}
+svg.MuiSvgIcon-root.playButton:hover {
+    font-size: 4.2rem;
+}

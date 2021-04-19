@@ -5,7 +5,10 @@ from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
 from rest_framework import status
 from .serializers import DataStructureSerializer,DataStructureVideoSerializer,DataStructureBlogSerializer,DataStructureQuestionSerializer
-from .models import DataStructure,DataStructureVideo,DataStructureBlog,DataStructureQuestion
+
+from .models      import DataStructure,DataStructureVideo,DataStructureBlog,DataStructureQuestion
+
+
 from rest_framework.decorators import api_view
 # Create your views here.
 @api_view(['GET'])
@@ -35,7 +38,10 @@ def DataStructureblogs(request,datastructure):
     if request.method=='GET':
         try:
             DataStructure_blogs=DataStructure.objects.get(DataStructure_Name=datastructure).datastructureblog_set.all()
+<<<<<<< HEAD:server/server/DataStructures/views.py
             print(DataStructure_blogs)
+=======
+>>>>>>> 6812e3f8001959c69d7711601360969404e16c7e:server/DataStructures/views.py
         except:
             return HttpResponse(status=404)   
         DataStructures_blog_serializer=DataStructureBlogSerializer(DataStructure_blogs,many=True)

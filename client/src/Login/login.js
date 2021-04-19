@@ -63,7 +63,11 @@ export default function Login(props) {
                                 <GoogleLogin
                                     clientId={process.env.REACT_APP_GOOGLE_API_KEY}
                                     render={renderProps => (
+<<<<<<< HEAD
                                     <Button className="googlebutton" onClick={renderProps.onClick} > <i className="fab fa-google fa-5x"></i></Button>)}
+=======
+                                    <Button className="googlebutton" onClick={renderProps.onClick} >{console.log(process.env.REACT_APP_GOOGLE_API_KEY)} <i class="fab fa-google fa-5x"></i></Button>)}
+>>>>>>> 6812e3f8001959c69d7711601360969404e16c7e
                                     onSuccess={responseGoogle}
                                     onFailure={responseGoogle}
                                 />
@@ -95,7 +99,7 @@ export default function Login(props) {
                          
                               <center>
                             
-                                <Typography className="signup">Don't have account?<Link  component="button" className="Link"><b>Sign up</b></Link></Typography>
+                                <Typography className="signup"> Dont  have account?<Link  component="button" className="Link"><b>Sign up</b></Link></Typography>
                
                             </center>
                            

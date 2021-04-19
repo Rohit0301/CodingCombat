@@ -24,7 +24,7 @@ class DataStructureBlog(models.Model):
 class DataStructureQuestion(models.Model):
     DataStructure_Question_Title=models.CharField(max_length=100,default=None)
     DataStructure_Question_Link=models.URLField(max_length=200,default=None)
-    DataStructure_Question_Difficulty=models.IntegerField(default=None)
+    DataStructure_Question_Difficulty=models.CharField(max_length=4,default=None)
     DataStructure_Question_Editorial=models.URLField(max_length=200,blank=True,null=True,default=None)
     DataStructure_Name=models.ForeignKey(DataStructure, on_delete=models.CASCADE,default=None)
     def __str__(self):

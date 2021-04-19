@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "gsap": "^3.6.1",
     "material-ui-responsive-menu": "^1.19.3",
     "react": "^17.0.2",
     "react-arc-text-fix": "0.0.0-development",

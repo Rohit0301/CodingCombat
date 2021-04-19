@@ -43,7 +43,7 @@ class App extends Component {
             
             <Route path="/"           exact component={Home}    />
             <Route path="/Algorithms" >
-              {/* {this.state.isLogin ?  <Algohome />: <Redirect to="/" /> } */}
+               {this.state.isLogin ?  <Algohome />: <Redirect to="/" /> } 
             </Route>  
             
             <Route path="/Algorithms/:name" exact>
@@ -51,7 +51,7 @@ class App extends Component {
             </Route>
 
             <Route path="/DataStructures" exact component={DShome}>
-              {/* {this.state.isLogin ?  <DShome />: <Redirect to="/" /> } */}
+               {this.state.isLogin ?  <DShome />: <Redirect to="/" /> } 
             </Route>  
             <Route path="/DataStructures/:name" exact>
               <DSpage />

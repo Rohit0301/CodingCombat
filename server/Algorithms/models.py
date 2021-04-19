@@ -24,7 +24,7 @@ class AlgorithmBlog(models.Model):
 class AlgorithmQuestion(models.Model):
     Algorithm_Question_Title=models.CharField(max_length=100,default=None)
     Algorithm_Question_Link=models.URLField(max_length=200,default=None)
-    Algorithm_Question_Difficulty=models.IntegerField(default=None)
+    Algorithm_Question_Difficulty=models.CharField(max_length=4,default=None)
     Algorithm_Question_Editorial=models.URLField(max_length=200,blank=True,null=True,default=None)
     Algorithm_Name=models.ForeignKey(Algorithm, on_delete=models.CASCADE,default=None)
     def __str__(self):

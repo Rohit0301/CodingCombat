@@ -15,21 +15,25 @@ import About from './About/About';
 class App extends Component {
   constructor(){
     super();
+
     this.state={isLogin:true};
+
+    this.state={isLogin:false};
+
   }
   componentDidMount(){
-    // const key=localStorage.getItem("userKey");
-    // if(key==null){
-    //  this.setState({
-    //    isLogin:true
-    //  });
-    // }
-    // else{
-    //   this.setState({
-    //     isLogin:true
-    //   });
-    // }
-    // console.log(this.state.isLogin);
+    const key=localStorage.getItem("userKey");
+    if(key==null){
+     this.setState({
+       isLogin:true
+     });
+    }
+    else{
+      this.setState({
+        isLogin:true
+      });
+    }
+    console.log(this.state.isLogin);
   }
   render(){
     const history = createBrowserHistory();

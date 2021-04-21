@@ -1,24 +1,10 @@
-<<<<<<< HEAD
-import { Paper, Typography } from '@material-ui/core';
-import React from 'react';
-import Navbar from '../Navbar/navbar';
-import './Home.css'
-export default function Home (){
-    return(
-        <>
-          <Navbar/>
-
-           <Paper className="home">
-
-           </Paper>
-=======
 import React, { useRef, useEffect } from 'react';
 import Navbar from '../Navbar/navbar';
 import './style.css'
 import { TimelineMax, Circ} from 'gsap';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
+import './Home.css';
 
 
 function Home() {
@@ -124,7 +110,7 @@ function Home() {
                       iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                       
                     >
-                      <h1 className="vertical-timeline-element-title">Why DSA?</h1>
+                      <h1 className="vertical-timeline-element-title1">Why DSA?</h1>
                       <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac placerat eros, nec malesuada quam. Aliquam semper viverra ante, eget tincidunt purus rutrum in. Sed in nulla vitae mi dapibus hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent facilisis nulla non vestibulum vulputate. Quisque sit amet accumsan dui. Duis eu turpis quis justo tempus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
@@ -144,7 +130,7 @@ function Home() {
                       iconStyle={{ background: '#c72c41', color: '#fff' }}
                       
                     >
-                      <h1 className="vertical-timeline-element-title">Pre Requisites</h1>
+                      <h1 className="vertical-timeline-element-title2">Pre Requisites</h1>
                       <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac placerat eros, nec malesuada quam. Aliquam semper viverra ante, eget tincidunt purus rutrum in. Sed in nulla vitae mi dapibus hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent facilisis nulla non vestibulum vulputate. Quisque sit amet accumsan dui. Duis eu turpis quis justo tempus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
@@ -167,7 +153,6 @@ function Home() {
                 </div>          
             </div>      
           </div>        
->>>>>>> 6812e3f8001959c69d7711601360969404e16c7e
         </>
     )
 }

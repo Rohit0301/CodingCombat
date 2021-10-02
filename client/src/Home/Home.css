@@ -4,4 +4,17 @@
     margin: 0 auto;
     position: relative;
     padding: 0;
+}.header {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    /* background-image: linear-gradient(to bottom, #ff1e56 0%, #ff99cc 100%); */
+}
+.main-content {
+    text-align: left;
+    padding-top: 60px;
+    font-family: Roboto;
+    font-weight: 100;
+    opacity: 0;
+    background-color:teal;
 }

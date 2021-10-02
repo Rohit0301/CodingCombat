@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 
 import Navbar from '../../Navbar/navbar';
 import './algopage.css';
@@ -6,7 +6,7 @@ import './algopage.css';
 import PropTypes      from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {Paper, Grid, Box, Typography, Tab, Tabs} from '@material-ui/core';
-
+import axios from 'axios';
 import VideoCard   from './videoCard';
 import BlogCard    from './blogCard';
 import ProblemCard from './problemCard';
@@ -55,10 +55,25 @@ const useStyles = makeStyles((theme) => ({
 export default function SimpleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [Prob,  setProb ] = useState( [ ] );
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  let location =  window.location.href
+  location = location.slice(37,42)
+  console.log(location);
+  let prob_url  = `https://bruteforce-dsa-backend-api.herokuapp.com/Algorithm/${location}/Questions/`
+
+  useEffect(() => {
+    const requestThree   = axios.get(prob_url)
+    .then((response) => {
+      let responseThree = response.data
+      setProb(responseThree);
+      
+    })
+    .catch((err) => {})
+  }, [])
 
   return (
     <div className={classes.root}>
@@ -97,13 +112,14 @@ export default function SimpleTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
       <Grid container direction="row" spacing={1}>
-          
-        <ProblemCard/>
-        <ProblemCard/>
-        <ProblemCard/>
-        <ProblemCard/>
-        <ProblemCard/>
-        <ProblemCard/>
+        {  
+          Prob.map( d =>  {
+                  return <ProblemCard title={ d['Algorithm_Question_Title'] }
+                                      link={ d['Algorithm_Question_Link']}
+                                      diff={ d['Algorithm_Question_Difficulty']}
+                        />
+                  })
+            }
         </Grid>  
       </TabPanel>
     </div>

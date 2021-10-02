@@ -17,9 +17,10 @@ a.withRouter\(navbar\)-padding-47.active {
     text-decoration: none;
 }
 header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.mui-fixed.MuiPaper-elevation4 {
-    background-color: bisque;
+    background-color: #0ac4c4;
+    /* width: 94%;
     /* width: 94%; */
-    position: sticky;
+    position: fixed;
     /* left: 3%; */
 }
 

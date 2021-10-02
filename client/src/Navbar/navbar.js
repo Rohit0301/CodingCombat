@@ -30,7 +30,8 @@ const styleSheet = {
     cursor : "pointer",
   },
   active : {
-    borderBottom:".3rem inset #333"
+    borderBottom:".3rem inset black",
+    fontWeight:500,
   },
 
   sideBarIcon : {

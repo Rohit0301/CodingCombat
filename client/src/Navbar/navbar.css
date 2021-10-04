@@ -34,7 +34,6 @@ header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrima
 }
 .MuiGrid-root.main {
     background-color: white;
-    position: fixed;
     /* top: 10%; */
     left: 3%;
     right: 3%;

@@ -10,10 +10,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      marginTop:"6rem",
-      width: '90%',
-      height:'.5rem',
-      borderRadius:'6rem',
+      marginTop:"7rem",
+      width: '91%',
+      height:'.6rem',
+      borderRadius:'7rem',
     },
   }));
 
@@ -31,7 +31,7 @@ export default function AlgoHome(){
 
     // Api calling
     useEffect(() => {
-        const res = axios.get(`https://bruteforce-dsa-backend-api.herokuapp.com/Algorithms/`)
+        const res = axios.get(`https://bruteforce-dsa-backend-api.herokuapp.com/algorithms/`)
         .then((response) => {
             setAlgo(response["data"])
             setIsLoading(false);
@@ -46,7 +46,7 @@ export default function AlgoHome(){
             setTempArr(Algo);
         }
         const arr=TempArr.map((item,index) => {
-            if(item!==undefined){    
+            if(item){    
                 var name=item.Algorithm_Name;
                 return <Algocard name={name} key={index}/>;
             }
@@ -60,7 +60,7 @@ export default function AlgoHome(){
     //search function
     const handleChange = (e) =>{
         const value=e.target.value;
-        if(value===undefined){
+        if(!value){
             setTempArr(Algo);
         }
         const arr=Algo.map((item) => {
@@ -98,11 +98,11 @@ export default function AlgoHome(){
     return(
         <>
         <Navbar/>   
-        <Paper className="mainBar" elevation={3}>
+        <Paper className="mainBar" elevation={4}>
             <Typography className="algoHeading">Algorithms</Typography>
-            <TextField className="algoField" placeholder="Search..."  variant="outlined" onChange={handleChange}></TextField>
+            <TextField className="algoField" placeholder="Search any algorithm"  variant="outlined" onChange={handleChange}></TextField>
         </Paper>
-         <Grid container direction="row" spacing={1}>
+         <Grid container direction="row" spacing={2}>
            {showAlgo()}
            </Grid>
         </>

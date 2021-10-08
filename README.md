@@ -3,7 +3,7 @@
 ## Prerequisites:
 * Install git in your machine.
 * Have basic command line experiance.
-* have knowledge of basic Javascript, HTML, CSS
+* have knowledge of basic React and django
 
 ## Resources to follow to contribute to this project or any open source project
 

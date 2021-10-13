@@ -62,8 +62,7 @@ export default function SimpleTabs() {
   };
   let location =  window.location.href
   location = location.slice(37,42)
-  console.log(location);
-  let prob_url  = `https://bruteforce-dsa-backend-api.herokuapp.com/Algorithm/${location}/Questions/`
+  let prob_url  = `https://bruteforce-dsa-backend-api.herokuapp.com/algorithm/${location}/questions/`
 
   useEffect(() => {
     const requestThree   = axios.get(prob_url)
@@ -92,23 +91,12 @@ export default function SimpleTabs() {
       </Paper>
       <TabPanel value={value} index={0}>
         <Grid container direction="row" spacing={1}>
-          
-         <VideoCard/>
-         <VideoCard/>
-         <VideoCard/>
-         <VideoCard/>
-         <VideoCard/>
-         <VideoCard/>
+      {[1,2,3,4].map(()=><VideoCard/>)}
          </Grid>  
 
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <BlogCard/>
-        <BlogCard/>
-        <BlogCard/>
-        <BlogCard/>
-        <BlogCard/>
-        <BlogCard/>
+      {[1,2,3,4].map(()=><BlogCard/>)}
       </TabPanel>
       <TabPanel value={value} index={2}>
       <Grid container direction="row" spacing={1}>

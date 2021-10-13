@@ -7,11 +7,11 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
       borderColor: '#e91e63',
-      borderRadius: '1rem',
-      borderWidth: '.2rem',
+      borderRadius: '2rem',
+      borderWidth: '.3rem',
       padding: 0,
-      height: '4rem',
-      margin: '3rem',
+      height: '5rem',
+      margin: '4rem',
       cursor: 'pointer'
     },
   }));
@@ -22,11 +22,11 @@ function DScard(props) {
 
     return(
         <>
-        <Grid item lg={3} xs={12} sm={6} md={4}>
+        <Grid item lg={4} xs={13} sm={7} md={5}>
             <NavLink to={`/DataStructures/${name}/`}
                 className="link" exact>
             
-                <Paper className="DScard" elevation={2} >
+                <Paper className="DScard" elevation={3} >
                     <center>
                         <Typography className="dstitle">
                             {name}

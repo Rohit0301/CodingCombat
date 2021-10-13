@@ -19,11 +19,10 @@ class DShome extends Component {
     componentDidMount(){
   
         axios
-            .get("http://localhost:8000/DataStructures/")
+            .get("http://localhost:8000/datastructures/")
             .then((response) => {
                 let data       = response.data;
                 let parse_name = data.map(d=> d.DataStructure_Name)
-                console.log(parse_name)
                 this.setState({
                     names: parse_name
                 });
@@ -34,6 +33,17 @@ class DShome extends Component {
     }
     
     //search function
+    const persons = [
+        {firstname : "Malcom", lastname: "Reynolds"},
+        {firstname : "Kaylee", lastname: "Frye"},
+        {firstname : "Jayne", lastname: "Cobb"}
+      ];
+      
+      persons.map(getFullName);
+      
+      function getFullName(item) {
+        return [item.firstname,item.lastname].join(" ");
+      }
     handleChange = (event) =>{
         
         const value = event.target.value;
@@ -64,14 +74,14 @@ class DShome extends Component {
     render()
     {
         const time = this.state.time
-        if (time===true){
+        if (time){
 
                 return (
                     <>
                     <Navbar />
                     <Paper className="mainBar" elevation={3}>
                         <Typography className="algoHeading">Data Structures</Typography>
-                        <TextField  className="algoField" placeholder="Search..."
+                        <TextField  className="algoField" placeholder="Search any datastructure"
                         variant="outlined" onChange={this.handleChange}></TextField>
                     </Paper>
                     <div><br/></div>
@@ -94,10 +104,10 @@ class DShome extends Component {
                     <Navbar />
                     <Paper className="mainBar" elevation={3}>
                         <Typography className="algoHeading">Data Structures</Typography>
-                        <TextField  className="algoField" placeholder="Search..."
+                        <TextField  className="algoField" placeholder="Search any datastructure"
                         variant="outlined" onChange={this.handleChange}></TextField>
                     </Paper>
-                    <Grid container direction="row" spacing={2}>
+                    <Grid container direction="row" spacing={3}>
                         {
                             this.state.search.map( d => {
                                 return <DScard name={d} />

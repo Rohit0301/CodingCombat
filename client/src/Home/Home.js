@@ -38,121 +38,124 @@ function Home() {
   
   return(
         <>
-          <div
-            class="main-wrap">
-            <div 
-                ref = {Element => loaderScene = Element}
-                class="sd-loader-wrap">
-                <div 
-                  class="sd-loader">
-                    <div 
-                      ref = {Element => logo = Element}
-                      class="sd-loader__logo"> BRUTE FORCE
-                        <div 
-                          ref = {Element => fl = Element}
-                          class="sd-loader__logo--fl"></div>
-                        <div 
-                          ref = {Element => sl = Element}
-                          class="sd-loader__logo--sl"></div>
-                    </div>
-                    <div 
-                      ref = {Element => title = Element}
-                      class="sd-loader__title">
-                      The Greatest Platform for Algorithms
-                    </div>
-                </div>
+          <body>
+          <div class="rightNav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+  
+    <section class="background firstsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">About US</p>
+  
+                <p class="text-small">
+                    Here you will get to know the team 
+                    members of our company
+                </p>
+  
+                <br>
+                  
+                <p class="center"><a href="#Order" 
+                    style="text-decoration:none;color:white;">
+                    Below are the people who
+                    works in our company</a>
+                </p>
+  
             </div>
-            <div 
-              ref = {Element => timeline = Element}
-              class="main-content">
-                <div
-                  ref = {Element => r1 = Element}
-                  class = "bar">
-                  <Navbar />
-                </div>
-                <header class="header">
-                  <div class="section-inner">
-                    
-                    <div class="master-head">
-                      <h1 class="page-title">The World Of Algorithms</h1>
-                      <p class="page-description">Scroll down for a visual journey of Brute Force</p>
-                    </div>
-                      
-                  </div> 
-                </header> 
-                <div>
-                  <VerticalTimeline>
-                    
-                    
-                    <VerticalTimelineElement
-                      className="vertical-timeline-element--work"
-                      contentStyle={{ background: '#ffac41', color: '#fff' }}
-                      contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                      date="2011 - present"
-                      iconStyle={{ background: '#ffac41', color: '#fff' }}
-                      
-                    >
-                      <h1 className="vertical-timeline-element-title">Why BruteForce ?</h1>
-                      <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac placerat eros, nec malesuada quam. Aliquam semper viverra ante, eget tincidunt purus rutrum in. Sed in nulla vitae mi dapibus hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent facilisis nulla non vestibulum vulputate. Quisque sit amet accumsan dui. Duis eu turpis quis justo tempus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                      </p>
-                    </VerticalTimelineElement>
-
-
-
-
-
-                    <VerticalTimelineElement
-                      className="vertical-timeline-element--work"
-                      contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                      contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                      date="2011 - present"
-                      iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                      
-                    >
-                      <h1 className="vertical-timeline-element-title1">Why DSA?</h1>
-                      <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac placerat eros, nec malesuada quam. Aliquam semper viverra ante, eget tincidunt purus rutrum in. Sed in nulla vitae mi dapibus hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent facilisis nulla non vestibulum vulputate. Quisque sit amet accumsan dui. Duis eu turpis quis justo tempus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-
-                      </p>
-                    </VerticalTimelineElement>
-
-
-
-
-
-
-                    <VerticalTimelineElement
-                      className="vertical-timeline-element--work"
-                      contentStyle={{ background: '#c72c41', color: '#fff' }}
-                      contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                      date="2011 - present"
-                      iconStyle={{ background: '#c72c41', color: '#fff' }}
-                      
-                    >
-                      <h1 className="vertical-timeline-element-title2">Pre Requisites</h1>
-                      <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac placerat eros, nec malesuada quam. Aliquam semper viverra ante, eget tincidunt purus rutrum in. Sed in nulla vitae mi dapibus hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent facilisis nulla non vestibulum vulputate. Quisque sit amet accumsan dui. Duis eu turpis quis justo tempus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-
-                      </p>
-                    </VerticalTimelineElement>
-                  </VerticalTimeline> 
-
-                  <footer class="footer section">
-                    <div class="section-inner">
-                      
-                      <div class="good-bye">
-                        <p>That's all!</p>
-                      </div> 
-
-                    </div>
-                  </footer> 
-
-
-
-                </div>          
-            </div>      
-          </div>        
+        </div>
+    </section>
+  
+    <section class="service">
+        <h1 class="h-primary center" style=
+            "margin-top:30px;text-align:center;">
+            Our Team
+        </h1>
+          
+        <div id="service">
+            <div class="box">
+                <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20201231132740/Capture.PNG"
+                    alt="picture not displayed">
+                <br>
+  
+                <p class="center">
+                    <a href="#xyz"
+                        style="text-decoration:none;color:black;
+                        font-weight:bold;font-family: 'Langar', cursive;">
+                        xyz
+                    </a>
+                </p>
+  
+  
+                <br>
+                  
+<p>CEO and the Founder</p>
+  
+            </div>
+  
+            <div class="box">
+                <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20201231132740/Capture.PNG"
+                    alt="picture not displayed">
+                <br>
+  
+                <p class="center">
+                    <a href="#abc"
+                        style="text-decoration:none;color:black;
+                        font-weight:bold;font-family: 'Langar', cursive;">
+                        abc
+                    </a>
+                </p>
+  
+  
+                <br>
+                  
+<p>co-founder</p>
+  
+                <br>
+                  
+<p>You can contact him: -</p>
+  
+                  
+<p>Foodscalablility@gmail.com</p>
+  
+            </div>
+        </div>
+    </section>
+  
+    <section class="services">
+        <div id="services">
+            <div class="box">
+                <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20201231132740/Capture.PNG"
+                    alt="picture not displayed">
+                <br>
+                <p class="center">
+                    <a href="#xyz" style="text-decoration:none;
+                        color:black;font-weight:bold;
+                        font-family: 'Langar', cursive;">
+                        asw
+                    </a>
+                </p>
+  
+                <br>
+  
+                  
+<p>Food Manager of the company </p>
+  
+            </div>
+        </div>
+    </section>
+      
+    <footer class="background">
+        <p class="text-footer">
+            Copyright ©-All rights are reserved
+        </p>
+  
+    </footer> 
+    </body>     
         </>
     )
 }

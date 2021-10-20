@@ -82,7 +82,7 @@ function Home() {
   
                 <p class="center">
                     <a href="#xyz"
-                        style="text-decoration:none;color:black;
+                        style="text-decoration:none;color:blue;
                         font-weight:bold;font-family: 'Langar', cursive;">
                         xyz
                     </a>

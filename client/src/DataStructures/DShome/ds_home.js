@@ -16,10 +16,11 @@ class DShome extends Component {
         }
     }
     
-    componentDidMount(){
+    async componentDidMount(){
   
-        axios
+       await axios
             .get("http://localhost:8000/datastructures/")
+
             .then((response) => {
                 let data       = response.data;
                 let parse_name = data.map(d=> d.DataStructure_Name)
@@ -31,7 +32,7 @@ class DShome extends Component {
             })
             .catch((err) => {});
     }
-    
+    //Count prime numbers that can be expressed as sum of consecutive prime numbers
     //search function
     const persons = [
         {firstname : "Malcom", lastname: "Reynolds"},
@@ -120,4 +121,4 @@ class DShome extends Component {
     }
 }
 
-export default DShome
+export default with router {DShome}
